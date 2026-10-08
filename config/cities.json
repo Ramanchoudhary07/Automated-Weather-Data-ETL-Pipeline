@@ -1,4 +1,17 @@
 [
   {"name": "Hanumangarh", "country": "IN"},
-  {"name": "London", "country": "GB"}
+  {"name": "Surat", "country": "IN"},
+  {"name": "New Delhi", "country": "IN"},
+  {"name": "Mumbai", "country": "IN"},
+  {"name": "Bengaluru", "country": "IN"},
+  {"name": "Chennai", "country": "IN"},
+  {"name": "Kolkata", "country": "IN"},
+  {"name": "Jaipur", "country": "IN"},
+  {"name": "London", "country": "GB"},
+  {"name": "New York", "country": "US"},
+  {"name": "Tokyo", "country": "JP"},
+  {"name": "Dubai", "country": "AE"},
+  {"name": "Singapore", "country": "SG"},
+  {"name": "Sydney", "country": "AU"},
+  {"name": "Moscow", "country": "RU"}
 ]
