@@ -124,8 +124,8 @@ Loads use `INSERT ... ON CONFLICT (...) DO UPDATE` so running the pipeline twice
 ## Milestones (update the checkboxes as I go)
 
 ### Milestone 1: Local end-to-end (week 1)
-- [ ] Create venv, `requirements.txt`, `.gitignore`, `.env.example`; init Git repo
-- [ ] Get an OpenWeatherMap API key; fetch one city and print the JSON
+- [x] Create venv, `requirements.txt`, `.gitignore`, `.env.example`; init Git repo
+- [x] Get an OpenWeatherMap API key; fetch one city and print the JSON
 - [ ] `extract.py`: fetch all cities from `config/cities.json`, with timeout + retries
 - [ ] `transform.py`: flatten JSON -> DataFrame, convert units/timestamps, validate
 - [ ] Run PostgreSQL locally (installer or Docker) and create tables from `sql/schema.sql`
