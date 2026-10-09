@@ -11,3 +11,5 @@ __pycache__/
 logs/
 
 CLAUDE.md
+# Airflow runtime files (generated)
+airflow/config/
