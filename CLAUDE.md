@@ -129,7 +129,7 @@ Loads use `INSERT ... ON CONFLICT (...) DO UPDATE` so running the pipeline twice
 - [x] `extract.py`: fetch all cities from `config/cities.json`, with timeout + retries
 - [x] `transform.py`: flatten JSON -> DataFrame, convert units/timestamps, validate
 - [x] Run PostgreSQL locally (installer or Docker) and create tables from `sql/schema.sql`
-- [ ] `load.py`: upsert `dim_city` and `fact_weather`
+- [x] `load.py`: upsert `dim_city` and `fact_weather`
 - [ ] `pipeline.py`: run everything end to end; check data in Postgres
 
 ### Milestone 2: Make it solid (week 2)
