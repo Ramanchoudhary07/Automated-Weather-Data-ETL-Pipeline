@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS fact_weather (
     pressure_hpa     INTEGER,
     wind_speed_ms    NUMERIC(5,2),
     weather_main     TEXT,
-    loaded_at        TIMESTAMP DEFAULT NOW(),
+    loaded_at        TIMESTAMP DEFAULT (NOW() AT TIME ZONE 'UTC'),
     PRIMARY KEY (city_id, observed_at_utc)  -- makes reruns idempotent
 );
 ```
@@ -130,7 +130,7 @@ Loads use `INSERT ... ON CONFLICT (...) DO UPDATE` so running the pipeline twice
 - [x] `transform.py`: flatten JSON -> DataFrame, convert units/timestamps, validate
 - [x] Run PostgreSQL locally (installer or Docker) and create tables from `sql/schema.sql`
 - [x] `load.py`: upsert `dim_city` and `fact_weather`
-- [ ] `pipeline.py`: run everything end to end; check data in Postgres
+- [x] `pipeline.py`: run everything end to end; check data in Postgres
 
 ### Milestone 2: Make it solid (week 2)
 - [ ] Logging setup with row counts and errors

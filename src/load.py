@@ -73,14 +73,3 @@ def load(dim_city: pd.DataFrame, fact_weather: pd.DataFrame) -> None:
                 logger.info("Upserted %s rows into fact_weather", fact_count)
     finally:
         conn.close()
-
-
-if __name__ == "__main__":
-    from src.config import CITIES_PATH, OPENWEATHER_API_KEY
-    from src.extract import extract_all, load_cities
-    from src.transform import transform
-
-    logging.basicConfig(level=logging.INFO)
-    raw = extract_all(load_cities(CITIES_PATH), OPENWEATHER_API_KEY)
-    dim_city, fact_weather = transform(raw)
-    load(dim_city, fact_weather)

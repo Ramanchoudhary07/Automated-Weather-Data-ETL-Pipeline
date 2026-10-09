@@ -15,6 +15,6 @@ CREATE TABLE IF NOT EXISTS fact_weather(
     pressure_hpa     INTEGER,
     wind_speed_ms    NUMERIC(5,2),
     weather_main     TEXT,
-    loaded_at        TIMESTAMP DEFAULT NOW(),
+    loaded_at        TIMESTAMP DEFAULT (NOW() AT TIME ZONE 'UTC'),
     PRIMARY KEY (city_id, observed_at_utc)
 );
