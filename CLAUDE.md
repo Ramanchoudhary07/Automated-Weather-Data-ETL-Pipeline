@@ -135,7 +135,7 @@ Loads use `INSERT ... ON CONFLICT (...) DO UPDATE` so running the pipeline twice
 ### Milestone 2: Make it solid (week 2)
 - [x] Logging setup with row counts and errors
 - [x] Config via `.env` (API key, DB credentials)
-- [ ] Prove idempotency: run twice, row count unchanged
+- [x] Prove idempotency: run twice, row count unchanged
 - [x] pytest tests for transform and validation functions; mock API responses for extract
 - [ ] Push to GitHub
 
