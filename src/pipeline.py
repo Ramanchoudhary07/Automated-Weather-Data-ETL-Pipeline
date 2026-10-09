@@ -6,6 +6,7 @@ from src.config import CITIES_PATH, OPENWEATHER_API_KEY
 from src.extract import extract_all, load_cities
 from src.transform import transform
 from src.load import load
+from src.logger import setup_logging
 
 logger = logging.getLogger(__name__)
 
@@ -26,10 +27,7 @@ def run_pipeline() -> None:
 
 def main() -> None:
     """Entry point: set up logging, run the pipeline, exit non-zero on failure."""
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s %(levelname)s %(name)s: %(message)s",
-    )
+    setup_logging()
     try:
         run_pipeline()
     except Exception:

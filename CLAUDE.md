@@ -133,8 +133,8 @@ Loads use `INSERT ... ON CONFLICT (...) DO UPDATE` so running the pipeline twice
 - [x] `pipeline.py`: run everything end to end; check data in Postgres
 
 ### Milestone 2: Make it solid (week 2)
-- [ ] Logging setup with row counts and errors
-- [ ] Config via `.env` (API key, DB credentials)
+- [x] Logging setup with row counts and errors
+- [x] Config via `.env` (API key, DB credentials)
 - [ ] Prove idempotency: run twice, row count unchanged
 - [x] pytest tests for transform and validation functions; mock API responses for extract
 - [ ] Push to GitHub
