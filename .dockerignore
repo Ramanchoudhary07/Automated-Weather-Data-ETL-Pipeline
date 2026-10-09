@@ -1,0 +1,15 @@
+# Secrets: passed in at run time, never baked into the image
+.env
+
+# Rebuilt inside the image / not needed to run
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+logs/
+*.log
+
+# Tooling and history
+.git/
+.gitignore
+.vscode/

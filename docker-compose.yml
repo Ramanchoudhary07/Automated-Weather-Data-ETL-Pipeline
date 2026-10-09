@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+    ports:
+      - "5433:5432"  # 5433 on Windows, because the local Postgres already uses 5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 5s
+      retries: 10
+
+  pipeline:
+    build: .
+    env_file: .env
+    environment:
+      DB_HOST: postgres  # the service name, not localhost
+      DB_PORT: 5432      # the container's port, not the host's 5433
+    volumes:
+      - ./logs:/app/logs  # keep log files on Windows after the container exits
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pgdata:
