@@ -1,6 +1,7 @@
 import json
 import logging
 import time
+from pathlib import Path
 
 import requests
 
@@ -9,7 +10,7 @@ from src.config import OPENWEATHER_API_KEY, BASE_URL, CITIES_PATH
 logger = logging.getLogger(__name__)
 
 
-def load_cities(path: str) -> list[dict]:
+def load_cities(path: str | Path) -> list[dict]:
     """Read the list of cities from a JSON file."""
     with open(path, "r", encoding="utf-8") as file:
         return json.load(file)

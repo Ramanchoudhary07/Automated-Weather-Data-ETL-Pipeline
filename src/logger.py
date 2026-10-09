@@ -1,8 +1,7 @@
 import logging
 import time
-from pathlib import Path
+from src.config import PROJECT_ROOT
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
 LOG_DIR = PROJECT_ROOT / "logs"
 LOG_FILE = LOG_DIR / "pipeline.log"
 
