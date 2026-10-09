@@ -127,8 +127,8 @@ Loads use `INSERT ... ON CONFLICT (...) DO UPDATE` so running the pipeline twice
 - [x] Create venv, `requirements.txt`, `.gitignore`, `.env.example`; init Git repo
 - [x] Get an OpenWeatherMap API key; fetch one city and print the JSON
 - [x] `extract.py`: fetch all cities from `config/cities.json`, with timeout + retries
-- [ ] `transform.py`: flatten JSON -> DataFrame, convert units/timestamps, validate
-- [ ] Run PostgreSQL locally (installer or Docker) and create tables from `sql/schema.sql`
+- [x] `transform.py`: flatten JSON -> DataFrame, convert units/timestamps, validate
+- [x] Run PostgreSQL locally (installer or Docker) and create tables from `sql/schema.sql`
 - [ ] `load.py`: upsert `dim_city` and `fact_weather`
 - [ ] `pipeline.py`: run everything end to end; check data in Postgres
 
